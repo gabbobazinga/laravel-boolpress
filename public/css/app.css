@@ -10944,3 +10944,15 @@ a.text-dark:focus {
   }
 }
 
+body {
+  background-color: #343A40;
+  margin-top: 20px;
+}
+
+body .description_fix span {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
