@@ -18,7 +18,7 @@
             <div class="form-group row">
                 <label for="inputAuthor" class="col-sm-2 col-form-label">Author:</label>
                 <div class="col-sm-10">
-                   <input class="form-control" type="text" name="inputAuthor" id="inputAuthor" value="{{ $post->author }}">
+                   <input class="form-control" type="text" name="inputAuthor" id="inputAuthor" value="{{ $post->postUser->name }}">
                 </div>
             </div>
             <div class="form-group row">

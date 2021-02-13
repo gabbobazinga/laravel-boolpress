@@ -20,23 +20,27 @@
             @foreach ($posts as $post)
                 <tr>
                     <td>{{ $post->title }}</td>
-                    <td>{{ $post->author}}</td>
+                    <td>{{ $post->postUser->name }}</td>
                     <td>{{ $post->categorie->title }}</td>
                     <td class="description_fix"><span>{{ $post->postInfo->description }} </span> </td>
                     <td>
                        <a class="btn btn-info btn-sm" href=" {{ route('posts.show', $post) }} "> SHOW </a>
                     </td>
                     @auth
-                    <td>
-                        <a class="btn btn-warning btn-sm" href=" {{ route('posts.edit', $post) }} "> EDIT </a>
-                    </td>
-                    <td>
-                        <form action=" {{ route('posts.destroy', $post) }}" method="post">
-                            @csrf
-                            @method('delete')
-                            <input class="btn btn-sm btn-danger" type="submit" value="DELETE">
-                        </form>
-                    </td>
+                        @if ($post->postUser->id == $user->id | $user->isAdmin == 1)
+                            <td>
+                                <a class="btn btn-warning btn-sm" href=" {{ route('posts.edit', $post) }} "> EDIT </a>
+                            </td>
+                            <td>
+                                <form action=" {{ route('posts.destroy', $post) }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <input class="btn btn-sm btn-danger" type="submit" value="DELETE">
+                                </form>
+                            </td>
+                        @else
+                            
+                        @endif
                     @endauth
                 </tr>
             @endforeach

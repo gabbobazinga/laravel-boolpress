@@ -9,19 +9,10 @@ use App\Post;
 use App\Categorie;
 use App\PostInformation;
 use App\Tag;
+use App\User;
 
 class BoolpressController extends Controller
 {
-    // public function logged() {
-    //     $user = Auth::user();
-    //     return view('commons.hello', compact('user'));
-    // }
-
-    // public function guest() {
-    //     $user = Auth::user();
-    //     return view('commons.hello');
-    // }
-
     public function __construct()
     {
         $this->middleware('auth')->except(['index', 'show']);
@@ -36,7 +27,8 @@ class BoolpressController extends Controller
     public function index()
     {
         $posts = Post::all();
-        return view('posts.index', compact('posts'));
+        $user = Auth::user();
+        return view('posts.index', compact('posts','user'));
     }
 
     /**
@@ -55,9 +47,6 @@ class BoolpressController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
     {
         $data = $request->all();
 

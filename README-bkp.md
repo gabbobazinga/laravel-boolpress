@@ -7,25 +7,8 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Project
+## About Laravel
 
-<!-- 
-    This project is based on the use of Laravel, MVC pattern and Mysql, a list of posts with related information: title Author Category description and tags. 
-    Using the Auth method, the user can register and login in and out. Guest users can only view the list of posts and the single post in detail, while logged in users, therefore authorized, can: 
-    create, 
-    modify and 
-    delete posts. 
-    
-    features: 
-    creation of a database using phpmyadmin, 
-    creation of tables via migration and 
-    random population via the factories with the use of Faker. 
-
-    With the help of separate controllers for login management and a type --resource to use all functions: index, show, create, edit, update, store and destroy. 
-    
-    views was treated with the use of bootstrap and eloquent framework.
-
- -->
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
